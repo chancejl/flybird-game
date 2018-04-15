@@ -1,0 +1,236 @@
+/*背景*/
+#wrap{
+	width: 343px;
+	height: 480px;
+	background:url(../img/bg.jpg);
+	margin: 50px auto;
+	position: relative;
+	overflow: hidden;
+}
+
+/*score*/
+.score{
+	width: 100%;
+	height: 41px;
+	text-align: center;
+	position: absolute;
+	top: 10px;
+	z-index: 1;
+	user-select: none;
+}
+
+/*游戏开始*/
+.gameStart{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+.ani,.startBtns{
+	position: absolute;
+	width: 100%;
+}
+
+.ani{
+	top: 130px;
+	height: 77px;
+	background:url("../img/head.jpg") no-repeat;
+	background-position: 50% 50%;
+	animation: startAni 2s infinite linear;
+}
+.ani div{
+	background:url("../img/bird0.png");
+	animation: birdfly 0.5s infinite linear;
+	position: absolute;
+	top: 0;
+	right: 50px;
+	width: 40px;
+	height: 26px;
+}
+
+/*开始按钮*/
+.startBtns{
+	position: absolute;
+	top: 260px;
+	width: 100%;
+	text-align: centre;
+}
+.startBtns div{
+	width: 85px;
+	height: 30px;
+	margin: 0 20px;
+	display: inline-block;
+}
+.startBtns div:nth-child(1){
+	background:url("../img/start.jpg");
+}
+.startBtns div:nth-child(2){
+	background:url("../img/submit.jpg");
+}
+
+/*结束界面*/
+.gameOver{
+	position: absolute;
+	width: 100%;
+	display: none;
+	z-index: 1;
+}
+
+.gameOver>div:nth-child(1){
+	position: absolute;
+	height: 40px;
+	width: 100%;
+	top: 120px;
+	background:url("../img/game_over.jpg") no-repeat;
+	background-position: 50% 50%;
+}
+
+.gameOver>div:nth-child(2){
+	position: absolute;
+	width: 100%;
+	height: 135px;
+	top: 180px;
+	background:url("../img/message.jpg") no-repeat center;
+}
+
+.nowScore,.bestScore{
+	position: absolute;
+	right: 67px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.nowScore{
+	top: 40px;
+	color: yellow;
+}
+
+.bestScore{
+	top: 90px;
+	color: black;
+}
+
+.ok{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 330px;
+}
+
+/*滚动条*/
+.scroll{
+	position: absolute;
+	bottom: 45px;
+	width: 100%;
+	height: 12px;
+	overflow: hidden;
+}
+
+.scroll img:nth-child(1){
+	position: absolute;
+	left: 0;
+	animation: scroll1 2s infinite linear;
+}
+
+.scroll img:nth-child(2){
+	position: absolute;
+	left: 340px;
+	animation: scroll2 2s infinite linear;
+}
+
+/*游戏小鸟*/
+.bird{
+	width: 40px;
+	height: 26px;
+	background:url("../img/bird0.png");
+	animation: birdfly 0.5s infinite linear;
+	position: absolute;
+	left: 40px;
+	top: 220px;
+	display: none;
+}
+
+/*管道*/
+.pipes{
+	position: absolute;
+}
+
+.pipe{
+	position: absolute;
+	width: 62px;
+	height: 423px;
+	left: 343px;
+}
+
+.pipeUp,.pipeDown{
+	position: absolute;
+	width: 100%;
+}
+
+.pipeUp{
+	height: 150px;
+	background:url("../img/up_mod.png");
+}
+
+.upHead{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background: url("../img/up_pipe.png")
+}
+
+.pipeDown{
+	height: 100px;
+	bottom: 0;
+	background:url("../img/down_mod.png");
+}
+
+.downHead{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	background: url("../img/down_pipe.png")
+}
+/*小鸟飞翔动画*/
+@keyframes birdfly{
+	0%{
+		background:url("../img/bird0.png");
+	}
+	100%{
+		background:url("../img/bird1.png");
+	}
+}
+
+/*ani上下移动动画*/
+@keyframes startAni{
+	0%{
+		top: 100px;
+	}
+	50%{
+		top: 130px;
+	}
+	100%{
+		top: 100px;
+	}
+}
+
+/*滚动条动画*/
+@keyframes scroll1{
+	0%{
+		left: 0;
+	}
+	100%{
+		left: -343px;
+	}
+}
+
+@keyframes scroll2{
+	0%{
+		left: 343px;
+	}
+	100%{
+		left: 0;
+	}
+}
